@@ -1,0 +1,1159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Event Planner - KIT Coimbatore UDHAYAM 2027</title>
+    <meta name="description" content="A practical event planning and management portal for UDHAYAM 2027 at KIT Coimbatore, led by Ms. Priyadharshini (Student General Secretary), featuring itemized budget calculator, approval tracking, day schedule, risk plan, poster concept, and printable master event plan." />
+    <meta property="og:title" content="Campus Event Planner - KIT Coimbatore UDHAYAM 2027" />
+    <meta property="og:description" content="A practical event planning and management portal for UDHAYAM 2027 at KIT Coimbatore, led by Ms. Priyadharshini (Student General Secretary), featuring itemized budget calculator, approval tracking, day schedule, risk plan, poster concept, and printable master event plan." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Tailwind CSS (via Vite/CDN compatible utility) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="bg-slate-100 text-slate-900 min-h-screen flex flex-col font-sans">
+    
+    <!-- TOP NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 bg-slate-900 text-white shadow-md border-b border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          
+          <!-- Brand Logo / College Name -->
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center font-black text-xl shadow-xs">
+              KIT
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="font-extrabold text-base sm:text-lg tracking-tight text-white">Campus Event Planner</span>
+                <span class="bg-amber-500/20 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded border border-amber-500/30">UDHAYAM 2027</span>
+              </div>
+              <p class="text-[11px] text-slate-400 hidden sm:block">KIT – Kalaignarkarunanidhi Institute of Technology, Coimbatore</p>
+            </div>
+          </div>
+
+          <!-- Desktop Navigation Tabs -->
+          <nav class="hidden xl:flex items-center space-x-1 text-xs font-semibold">
+            <button type="button" data-tab-target="home" class="px-3 py-2 rounded-lg transition-colors bg-slate-900 text-white shadow-xs">Home</button>
+            <button type="button" data-tab-target="plan" class="px-3 py-2 rounded-lg transition-colors text-slate-300 hover:bg-slate-800">Event Plan</button>
+            <button type="button" data-tab-target="schedule" class="px-3 py-2 rounded-lg transition-colors text-slate-300 hover:bg-slate-800">Schedule</button>
+            <button type="button" data-tab-target="team" class="px-3 py-2 rounded-lg transition-colors text-slate-300 hover:bg-slate-800">Team</button>
+            <button type="button" data-tab-target="budget" class="px-3 py-2 rounded-lg transition-colors text-slate-300 hover:bg-slate-800">Budget</button>
+            <button type="button" data-tab-target="approvals" class="px-3 py-2 rounded-lg transition-colors text-slate-300 hover:bg-slate-800">Approvals</button>
+            <button type="button" data-tab-target="review" class="px-3 py-2 rounded-lg transition-colors text-slate-300 hover:bg-slate-800">Review</button>
+            <button type="button" data-tab-target="deliverables" class="px-3 py-2 rounded-lg transition-colors text-amber-400 hover:bg-slate-800 flex items-center gap-1.5 font-bold">
+              <span>Proposal & Poster</span>
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+            </button>
+          </nav>
+
+          <!-- Action Buttons -->
+          <div class="hidden sm:flex items-center gap-2">
+            <button type="button" data-action="print-event-plan" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+              Print / Save as PDF
+            </button>
+          </div>
+
+          <!-- Mobile Hamburger Toggle -->
+          <div class="flex xl:hidden">
+            <button type="button" id="mobile-menu-toggle" class="p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Toggle Navigation Menu">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden xl:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-4 space-y-1 text-sm font-semibold">
+        <button type="button" data-tab-target="home" class="block w-full text-left px-3 py-2 rounded text-slate-200 hover:bg-slate-800">Home Dashboard</button>
+        <button type="button" data-tab-target="plan" class="block w-full text-left px-3 py-2 rounded text-slate-200 hover:bg-slate-800">Event Plan</button>
+        <button type="button" data-tab-target="schedule" class="block w-full text-left px-3 py-2 rounded text-slate-200 hover:bg-slate-800">Event-Day Schedule</button>
+        <button type="button" data-tab-target="team" class="block w-full text-left px-3 py-2 rounded text-slate-200 hover:bg-slate-800">Team Responsibilities</button>
+        <button type="button" data-tab-target="budget" class="block w-full text-left px-3 py-2 rounded text-slate-200 hover:bg-slate-800">Budget Calculator</button>
+        <button type="button" data-tab-target="approvals" class="block w-full text-left px-3 py-2 rounded text-slate-200 hover:bg-slate-800">Promotion & Approvals</button>
+        <button type="button" data-tab-target="review" class="block w-full text-left px-3 py-2 rounded text-slate-200 hover:bg-slate-800">Review & Documentation</button>
+        <button type="button" data-tab-target="deliverables" class="block w-full text-left px-3 py-2 rounded text-amber-400 font-bold hover:bg-slate-800">Official Proposal & Poster</button>
+        <div class="pt-2 border-t border-slate-800">
+          <button type="button" data-action="print-event-plan" class="w-full text-center py-2 bg-sky-600 rounded text-white text-xs font-bold">Print / Save Plan as PDF</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
+
+      <!-- ==============================================
+           TAB A: HOME DASHBOARD
+           ============================================== -->
+      <section id="tab-home" class="tab-panel space-y-6">
+        
+        <!-- Hero Card with Rich Venue Photography -->
+        <div class="bg-gradient-to-r from-slate-900 via-sky-950 to-slate-900 rounded-2xl p-6 sm:p-8 text-white shadow-lg border border-slate-800 relative overflow-hidden">
+          <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            <!-- Left Column: Details -->
+            <div class="lg:col-span-7 space-y-4">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 text-xs font-semibold border border-amber-400/30">
+                <span>Verified College Flagship Fest</span>
+                <span class="text-slate-400">•</span>
+                <span>Proposed 2027 Edition Planning Model</span>
+              </div>
+              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">
+                UDHAYAM 2027
+              </h1>
+              <p class="text-sky-200 text-base sm:text-lg font-medium">
+                National-Level Inter-Collegiate Techno-Cultural Fest &amp; Student Symposium
+              </p>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                Hosted by <strong class="text-white">KIT – Kalaignarkarunanidhi Institute of Technology</strong>, Kannampalayam, Coimbatore. Coordinated by Student General Secretary <strong class="text-white">Ms. Priyadharshini</strong> and the Student Organizing Council. Bringing together 1,200+ aspiring engineers and innovators from 45+ colleges across South India for 2 days of paper presentations, coding battles, robotics, hardware innovation, and cultural showcases.
+              </p>
+              <div class="flex flex-wrap items-center gap-4 pt-1 text-xs text-slate-300">
+                <span class="flex items-center gap-1.5">
+                  <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                  <strong>Proposed Dates:</strong> Feb 26–27, 2027
+                </span>
+                <span class="flex items-center gap-1.5">
+                  <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                  <strong>Venue:</strong> Dr. Kalaignar Auditorium &amp; Labs
+                </span>
+                <span class="flex items-center gap-1.5">
+                  <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  <strong>Duration:</strong> 2 Full Days
+                </span>
+              </div>
+
+              <div class="pt-3 flex flex-wrap gap-3">
+                <button type="button" data-jump-tab="plan" class="px-4 py-2 rounded-lg bg-white text-slate-900 text-xs font-bold hover:bg-slate-100 transition-colors cursor-pointer">
+                  View Event Plan →
+                </button>
+                <button type="button" data-jump-tab="budget" class="px-4 py-2 rounded-lg bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold transition-colors cursor-pointer">
+                  Live Budget Calculator →
+                </button>
+                <button type="button" data-jump-tab="deliverables" class="px-4 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold transition-colors cursor-pointer">
+                  Official Proposal &amp; Poster →
+                </button>
+              </div>
+            </div>
+
+            <!-- Right Column: Visual Stage / Auditorium Picture -->
+            <div class="lg:col-span-5 relative group">
+              <div class="relative overflow-hidden rounded-xl border border-slate-700/80 shadow-2xl bg-slate-950">
+                <img src="./assets/images/udhayam_fest_hero_1792729369539.jpg" 
+                     alt="UDHAYAM 2027 Inauguration at Dr. Kalaignar Auditorium, KIT Coimbatore" 
+                     class="w-full h-56 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent"></div>
+                <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs">
+                  <span class="font-bold text-white bg-slate-900/80 px-2.5 py-1 rounded backdrop-blur-xs border border-slate-700">
+                    🏛️ Dr. Kalaignar Auditorium
+                  </span>
+                  <span class="text-[11px] text-amber-300 font-semibold bg-amber-500/20 px-2 py-0.5 rounded border border-amber-500/30">
+                    1,500 Seating Capacity
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Summary Metric Cards -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-xs">
+            <span class="text-xs font-semibold text-slate-500">Planned Attendance</span>
+            <div class="text-2xl font-black text-slate-900 mt-1">1,200+</div>
+            <p class="text-[11px] text-slate-500 mt-1">Delegates from 45+ colleges</p>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-xs">
+            <span class="text-xs font-semibold text-slate-500">Estimated Gross Budget</span>
+            <div id="dash-card-budget" class="text-2xl font-black text-slate-900 mt-1 font-mono">₹3,13,500</div>
+            <p id="dash-card-per-delegate" class="text-[11px] text-slate-500 mt-1">₹261 / delegate (incl. 10% reserve)</p>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-xs">
+            <span class="text-xs font-semibold text-slate-500">Competitions & Tracks</span>
+            <div class="text-2xl font-black text-slate-900 mt-1">14 Events</div>
+            <p class="text-[11px] text-slate-500 mt-1">Tech papers, hackathon, cultural</p>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-xs">
+            <span class="text-xs font-semibold text-slate-500">College Approvals</span>
+            <div id="dash-card-approvals" class="text-2xl font-black text-emerald-600 mt-1">5 of 8 Cleared</div>
+            <p class="text-[11px] text-slate-500 mt-1">Principal, Estate & Finance</p>
+          </div>
+        </div>
+
+        <!-- Event Fields & Tracks Visual Showcase (Attractive Photography) -->
+        <div class="space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                <span>📸</span>
+                <span>Flagship Event Fields &amp; Competitions</span>
+              </h2>
+              <p class="text-xs text-slate-500">Real on-campus arenas and flagship domains planned for UDHAYAM 2027 at KIT Coimbatore.</p>
+            </div>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-sky-100 text-sky-800 self-start sm:self-auto">
+              14 Active Competitions Across 6 Fields
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            
+            <!-- Field 1: Technical Coding & Hackathon -->
+            <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md transition-shadow group flex flex-col">
+              <div class="relative overflow-hidden h-44 bg-slate-900">
+                <img src="./assets/images/hackathon_coding_1792729369925.jpg" 
+                     alt="Coding & Hackathon Competition at KIT Computing Centre" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-2.5 right-2.5 bg-slate-950/80 backdrop-blur-xs text-sky-400 text-[10px] font-bold px-2 py-0.5 rounded border border-sky-400/30">
+                  Computing &amp; IT Field
+                </span>
+                <span class="absolute bottom-2 left-2.5 bg-slate-950/80 backdrop-blur-xs text-white text-[11px] font-semibold px-2 py-0.5 rounded">
+                  📍 Computing Centre Labs 1–4
+                </span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-between space-y-2">
+                <div>
+                  <h3 class="font-bold text-sm text-slate-900 group-hover:text-sky-600 transition-colors">
+                    Logical Rivera: 24h Hackathon &amp; Code Sprint
+                  </h3>
+                  <p class="text-xs text-slate-600 leading-relaxed mt-1">
+                    Speed debugging, algorithmic problem solving, and full-stack software prototyping on 120+ high-performance terminals.
+                  </p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-medium">
+                  <span>₹15,000 Cash Prize Pool</span>
+                  <span class="text-sky-600 font-bold">120 Terminals</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Field 2: Robotics & Hardware Expo -->
+            <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md transition-shadow group flex flex-col">
+              <div class="relative overflow-hidden h-44 bg-slate-900">
+                <img src="./assets/images/robotics_project_expo_1792729389933.jpg" 
+                     alt="Robotics and IoT Project Expo at KIT Coimbatore" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-2.5 right-2.5 bg-slate-950/80 backdrop-blur-xs text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded border border-amber-400/30">
+                  Hardware &amp; IoT Field
+                </span>
+                <span class="absolute bottom-2 left-2.5 bg-slate-950/80 backdrop-blur-xs text-white text-[11px] font-semibold px-2 py-0.5 rounded">
+                  📍 Aero Hangar &amp; Mech Quad
+                </span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-between space-y-2">
+                <div>
+                  <h3 class="font-bold text-sm text-slate-900 group-hover:text-amber-600 transition-colors">
+                    Project Expo: Hardware &amp; Robotics Innovation
+                  </h3>
+                  <p class="text-xs text-slate-600 leading-relaxed mt-1">
+                    Live prototype demonstrations: autonomous agricultural rovers, smart IoT sensors, electric vehicle designs, and drone flights.
+                  </p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-medium">
+                  <span>₹20,000 Cash Prize Pool</span>
+                  <span class="text-amber-600 font-bold">40+ Prototypes</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Field 3: Cultural Arts & Musical Night -->
+            <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md transition-shadow group flex flex-col">
+              <div class="relative overflow-hidden h-44 bg-slate-900">
+                <img src="./assets/images/cultural_stage_dance_1792729389793.jpg" 
+                     alt="Grand Cultural Gala & Dance at Dr. Kalaignar Auditorium" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-2.5 right-2.5 bg-slate-950/80 backdrop-blur-xs text-purple-400 text-[10px] font-bold px-2 py-0.5 rounded border border-purple-400/30">
+                  Cultural &amp; Arts Field
+                </span>
+                <span class="absolute bottom-2 left-2.5 bg-slate-950/80 backdrop-blur-xs text-white text-[11px] font-semibold px-2 py-0.5 rounded">
+                  📍 Dr. Kalaignar Auditorium
+                </span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-between space-y-2">
+                <div>
+                  <h3 class="font-bold text-sm text-slate-900 group-hover:text-purple-600 transition-colors">
+                    Grand Cultural Night &amp; Stage Performances
+                  </h3>
+                  <p class="text-xs text-slate-600 leading-relaxed mt-1">
+                    Inter-collegiate fusion dance competitions, western/classical vocal battles, Lens &amp; Motion photography, and celebrity guest showcase.
+                  </p>
+                </div>
+                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-medium">
+                  <span>₹20,000 Prize &amp; Shields</span>
+                  <span class="text-purple-600 font-bold">1,500 Audience</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Two Column Overview: Objectives & Verified Evidence -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+          <!-- Objectives Card -->
+          <div class="lg:col-span-2 bg-white rounded-xl border border-slate-200 p-6 shadow-xs space-y-4">
+            <div class="flex items-center justify-between">
+              <h2 class="text-lg font-bold text-slate-900">Event Objectives &amp; Target Outcomes</h2>
+              <span class="text-xs px-2.5 py-1 bg-sky-50 text-sky-800 font-semibold rounded-md border border-sky-100">SMART Criteria</span>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              UDHAYAM 2027 is structured around four concrete educational and professional objectives designed to deliver measurable value to participants and the institution.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div class="p-4 rounded-lg bg-slate-50 border border-slate-100 space-y-1">
+                <div class="flex items-center gap-2 font-bold text-xs text-slate-900">
+                  <span class="w-5 h-5 rounded-full bg-sky-600 text-white flex items-center justify-center text-[10px]">1</span>
+                  Technical Innovation
+                </div>
+                <p class="text-xs text-slate-600">120+ research paper presentations and 40+ hardware prototypes solving agriculture and automation challenges.</p>
+              </div>
+              <div class="p-4 rounded-lg bg-slate-50 border border-slate-100 space-y-1">
+                <div class="flex items-center gap-2 font-bold text-xs text-slate-900">
+                  <span class="w-5 h-5 rounded-full bg-sky-600 text-white flex items-center justify-center text-[10px]">2</span>
+                  Industry Exposure
+                </div>
+                <p class="text-xs text-slate-600">Keynotes and direct networking with tech leaders from the Coimbatore industrial corridor (Bosch, L&T).</p>
+              </div>
+              <div class="p-4 rounded-lg bg-slate-50 border border-slate-100 space-y-1">
+                <div class="flex items-center gap-2 font-bold text-xs text-slate-900">
+                  <span class="w-5 h-5 rounded-full bg-sky-600 text-white flex items-center justify-center text-[10px]">3</span>
+                  Leadership Training
+                </div>
+                <p class="text-xs text-slate-600">Hands-on stewardship for 80 student committee volunteers across 9 operational departments.</p>
+              </div>
+              <div class="p-4 rounded-lg bg-slate-50 border border-slate-100 space-y-1">
+                <div class="flex items-center gap-2 font-bold text-xs text-slate-900">
+                  <span class="w-5 h-5 rounded-full bg-sky-600 text-white flex items-center justify-center text-[10px]">4</span>
+                  Cultural Expression
+                </div>
+                <p class="text-xs text-slate-600">Dynamic arts competitions including photography, reels, e-sports, and an evening musical gala.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Verified Institutional Card -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-xs space-y-4">
+            <h2 class="text-lg font-bold text-slate-900">Institutional Credibility</h2>
+            <div class="space-y-3 text-xs">
+              <div class="pb-2 border-b border-slate-100">
+                <div class="font-bold text-slate-900">KIT Coimbatore</div>
+                <div class="text-slate-500">Kannampalayam Post, Coimbatore - 641 402, Tamil Nadu</div>
+              </div>
+              <div class="pb-2 border-b border-slate-100">
+                <div class="font-bold text-slate-900">Affiliation & Accreditations</div>
+                <div class="text-slate-500">Autonomous, Anna University affiliated, AICTE approved, NAAC 'A' Grade & NBA accredited</div>
+              </div>
+              <div class="pb-2 border-b border-slate-100">
+                <div class="font-bold text-slate-900">Key Campus Venues</div>
+                <div class="text-slate-500">Dr. Kalaignar Auditorium (1,500 seats), Central Seminar Hall, CS/AI/Mech Labs</div>
+              </div>
+              <div>
+                <div class="font-bold text-slate-900">Proposed Planning Note</div>
+                <div class="text-slate-500">Historical name and campus features are verified; specific dates, budget line items, and schedule entries represent a proposed master plan for the assignment.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ==============================================
+           TAB B: PRACTICAL EVENT PLAN
+           ============================================== -->
+      <section id="tab-plan" class="tab-panel hidden space-y-6">
+        
+        <!-- Header Banner -->
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs space-y-2">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <div>
+              <h2 class="text-xl sm:text-2xl font-black text-slate-900">Comprehensive Event Plan: UDHAYAM 2027</h2>
+              <p class="text-xs sm:text-sm text-slate-600">KIT – Kalaignarkarunanidhi Institute of Technology, Coimbatore</p>
+            </div>
+            <button type="button" data-action="print-event-plan" class="px-3.5 py-1.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold transition-colors cursor-pointer flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+              Print Clean Document
+            </button>
+          </div>
+          <div class="p-3 bg-amber-50 border border-amber-200 rounded-lg text-xs text-amber-900 leading-relaxed">
+            <strong>Planning Note:</strong> <em>UDHAYAM 2027</em> is the annual inter-collegiate techno-cultural symposium organized by Student General Secretary Ms. Priyadharshini and the Student Organizing Council at KIT Coimbatore. The proposed dates (Feb 26–27, 2027), budget estimates (₹3,13,500 gross), and attendance targets (1,200 delegates) are proposed planning benchmarks designed for this academic submission.
+          </div>
+        </div>
+
+        <!-- 6-Week Preparation Timeline -->
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs space-y-4">
+          <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+            <svg class="w-5 h-5 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            Preparation Timeline: 6-Week Milestone Gantt
+          </h3>
+          <p class="text-xs text-slate-600">Structured pre-event schedule ensuring all logistics, guest invitations, procurements, and approvals are fulfilled on time.</p>
+          
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs border border-slate-200 rounded-lg overflow-hidden border-collapse">
+              <thead>
+                <tr class="bg-slate-900 text-white">
+                  <th class="p-3 font-semibold">Phase & Period</th>
+                  <th class="p-3 font-semibold">Focus Area</th>
+                  <th class="p-3 font-semibold">Key Preparation Tasks</th>
+                  <th class="p-3 font-semibold">Primary Deliverable</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200">
+                <tr class="hover:bg-slate-50">
+                  <td class="p-3 font-bold font-mono text-slate-900 whitespace-nowrap">T-6 Weeks<br><span class="text-[10px] text-slate-500 font-sans font-normal">Jan 10 – Jan 17</span></td>
+                  <td class="p-3 font-semibold text-sky-900">Charter & Sanction</td>
+                  <td class="p-3 text-slate-600">Draft proposal with HODs; obtain Principal & Management sanction; book Dr. Kalaignar Auditorium and central labs; form core student council.</td>
+                  <td class="p-3 text-slate-900 font-medium">Signed Sanction Order</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="p-3 font-bold font-mono text-slate-900 whitespace-nowrap">T-4 Weeks<br><span class="text-[10px] text-slate-500 font-sans font-normal">Jan 18 – Jan 31</span></td>
+                  <td class="p-3 font-semibold text-sky-900">Publicity & Invitations</td>
+                  <td class="p-3 text-slate-600">Dispatch keynote speaker invitations; print 150 promotional posters; mail circulars to 50 colleges; launch online registration portal.</td>
+                  <td class="p-3 text-slate-900 font-medium">Speaker Confirmations & Live Portal</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="p-3 font-bold font-mono text-slate-900 whitespace-nowrap">T-2 Weeks<br><span class="text-[10px] text-slate-500 font-sans font-normal">Feb 01 – Feb 14</span></td>
+                  <td class="p-3 font-semibold text-sky-900">Paper Review & Procurement</td>
+                  <td class="p-3 text-slate-600">Peer-review technical abstracts; contract catering for 1,200 delegates; order delegate kits, badges, and engraved winner trophies.</td>
+                  <td class="p-3 text-slate-900 font-medium">Shortlisted Abstracts & Vendor POs</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="p-3 font-bold font-mono text-slate-900 whitespace-nowrap">T-1 Week<br><span class="text-[10px] text-slate-500 font-sans font-normal">Feb 15 – Feb 22</span></td>
+                  <td class="p-3 font-semibold text-sky-900">Logistics & Safety Dry-Run</td>
+                  <td class="p-3 text-slate-600">Inspect auditorium AV; test 62.5 kVA backup generator; submit police intimation letter; arrange standby nurse at Health Centre.</td>
+                  <td class="p-3 text-slate-900 font-medium">Safety Clearance & Tech Test</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="p-3 font-bold font-mono text-slate-900 whitespace-nowrap">T-1 Day<br><span class="text-[10px] text-slate-500 font-sans font-normal">Feb 25</span></td>
+                  <td class="p-3 font-semibold text-sky-900">Stage Setup & Kit Assembly</td>
+                  <td class="p-3 text-slate-600">Mount 24ft backdrop flex; assemble 1,200 kits at Central Seminar Hall; acoustic check; full 80-volunteer walkie-talkie briefing.</td>
+                  <td class="p-3 text-slate-900 font-medium">Desks & Dais Ready</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="p-3 font-bold font-mono text-slate-900 whitespace-nowrap">Event Days<br><span class="text-[10px] text-slate-500 font-sans font-normal">Feb 26 – Feb 27</span></td>
+                  <td class="p-3 font-semibold text-sky-900">Live Execution</td>
+                  <td class="p-3 text-slate-600">Operate 5 registration counters; coordinate 14 events across 6 venues; oversee delegate lunches; execute Valedictory prize ceremony.</td>
+                  <td class="p-3 text-slate-900 font-medium">Completed Score Sheets & Awards</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="p-3 font-bold font-mono text-slate-900 whitespace-nowrap">T+1 Week<br><span class="text-[10px] text-slate-500 font-sans font-normal">Feb 28 – Mar 06</span></td>
+                  <td class="p-3 font-semibold text-sky-900">Audit & Archive</td>
+                  <td class="p-3 text-slate-600">Reconcile accounts bills; collate attendee survey ratings; issue digital participation certificates; archive photos and press reports.</td>
+                  <td class="p-3 text-slate-900 font-medium">Audited Report & Final Archive</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Resources & Risk Management Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          
+          <!-- Venue & Resources Breakdown -->
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs space-y-4">
+            <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+              <svg class="w-5 h-5 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+              Venues, Equipment & Resources
+            </h3>
+            <div class="space-y-3 text-xs">
+              <div class="p-3 rounded-lg bg-slate-50 border border-slate-100">
+                <span class="font-bold text-slate-900">Dr. Kalaignar Auditorium (1,500 Capacity):</span>
+                <p class="text-slate-600 mt-0.5">High-lumen laser projectors, dual acoustic line-array speakers, 6 cordless microphones, 24ft x 12ft printed backdrop, and dais VIP seating.</p>
+              </div>
+              <div class="p-3 rounded-lg bg-slate-50 border border-slate-100">
+                <span class="font-bold text-slate-900">Computing Centre Labs 1–4 (200+ Terminals):</span>
+                <p class="text-slate-600 mt-0.5">High-speed LAN connectivity, pre-installed Python, GCC, Java & VS Code environments, isolated server for coding contests.</p>
+              </div>
+              <div class="p-3 rounded-lg bg-slate-50 border border-slate-100">
+                <span class="font-bold text-slate-900">Central Seminar Hall & Aero Hangars:</span>
+                <p class="text-slate-600 mt-0.5">Dedicated air-conditioned venue for quiz buzzers and spacious industrial hangar for drone flights and hardware models.</p>
+              </div>
+              <div class="p-3 rounded-lg bg-slate-50 border border-slate-100">
+                <span class="font-bold text-slate-900">Volunteer Allocation:</span>
+                <p class="text-slate-600 mt-0.5">80 student stewards with department t-shirts and badge identifiers across registration, labs, hospitality, safety, and media.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Risk Management & Contingency Plan -->
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs space-y-4">
+            <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+              <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+              Risk Mitigation & Backup Arrangements
+            </h3>
+            <div class="space-y-2.5 text-xs">
+              <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-100">
+                <div class="flex items-center justify-between font-bold text-slate-900">
+                  <span>Power Failure / Grid Outage</span>
+                  <span class="text-[10px] px-1.5 py-0.5 bg-red-100 text-red-800 rounded">High Severity</span>
+                </div>
+                <p class="text-slate-600 mt-1">Automatic 62.5 kVA diesel generator failover configured in 45 seconds; central audio and servers backed by uninterrupted UPS.</p>
+              </div>
+              <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-100">
+                <div class="flex items-center justify-between font-bold text-slate-900">
+                  <span>Attendance Surge (>1,200 Delegates)</span>
+                  <span class="text-[10px] px-1.5 py-0.5 bg-amber-100 text-amber-800 rounded">Medium Severity</span>
+                </div>
+                <p class="text-slate-600 mt-1">Online pre-registration cutoffs strictly enforced; overflow 300-seat balcony opened with LAN video relay.</p>
+              </div>
+              <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-100">
+                <div class="flex items-center justify-between font-bold text-slate-900">
+                  <span>Sudden Rain / Inclement Weather</span>
+                  <span class="text-[10px] px-1.5 py-0.5 bg-slate-200 text-slate-800 rounded">Low Severity</span>
+                </div>
+                <p class="text-slate-600 mt-1">All flagship tracks hosted inside concrete auditoriums; outdoor exhibits relocated to covered ground porticos.</p>
+              </div>
+              <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-100">
+                <div class="flex items-center justify-between font-bold text-slate-900">
+                  <span>Medical Emergency / Dehydration</span>
+                  <span class="text-[10px] px-1.5 py-0.5 bg-red-100 text-red-800 rounded">High Severity</span>
+                </div>
+                <p class="text-slate-600 mt-1">First-aid desk in foyer staffed with registered nurse; college emergency van on standby for Kannampalayam hospital transit.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ==============================================
+           TAB C: EVENT-DAY SCHEDULE
+           ============================================== -->
+      <section id="tab-schedule" class="tab-panel hidden space-y-6">
+        
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-black text-slate-900">Event-Day Run of Show (Agenda)</h2>
+            <p class="text-xs sm:text-sm text-slate-600">Realistic time slots, venues, coordinators, and activity tracks for UDHAYAM 2027.</p>
+          </div>
+          
+          <!-- Filter Chips -->
+          <div class="flex flex-wrap items-center gap-1.5 text-xs font-semibold">
+            <button type="button" data-schedule-filter="all" class="px-3 py-1.5 rounded-full bg-sky-600 text-white cursor-pointer transition-colors">All (11)</button>
+            <button type="button" data-schedule-filter="technical" class="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 cursor-pointer transition-colors">Technical</button>
+            <button type="button" data-schedule-filter="non-technical" class="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 cursor-pointer transition-colors">Non-Technical & Creative</button>
+            <button type="button" data-schedule-filter="ceremony" class="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 cursor-pointer transition-colors">Ceremonies</button>
+            <button type="button" data-schedule-filter="breaks" class="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 cursor-pointer transition-colors">Breaks</button>
+          </div>
+        </div>
+
+        <!-- Dynamic Timeline Container -->
+        <div id="schedule-timeline-container" class="space-y-0 pt-2">
+          <!-- Filled dynamically via app.js -->
+        </div>
+
+      </section>
+
+
+      <!-- ==============================================
+           TAB D: TEAM RESPONSIBILITIES
+           ============================================== -->
+      <section id="tab-team" class="tab-panel hidden space-y-6">
+        
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-black text-slate-900">Organizing Committee & Team Matrix</h2>
+            <p class="text-xs sm:text-sm text-slate-600">Defined responsibilities, pre-event deliverables, and event-day roles for faculty and student leaders.</p>
+          </div>
+          <div class="relative w-full sm:w-64">
+            <input type="text" id="team-search-input" placeholder="Search role or coordinator..." 
+                   class="w-full text-xs py-2 pl-8 pr-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-sky-500 bg-slate-50 focus:bg-white">
+            <svg class="w-4 h-4 text-slate-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+        </div>
+
+        <!-- Dynamic Team Grid -->
+        <div id="team-grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Filled dynamically via app.js -->
+        </div>
+
+      </section>
+
+
+      <!-- ==============================================
+           TAB E: BUDGET CALCULATOR
+           ============================================== -->
+      <section id="tab-budget" class="tab-panel hidden space-y-6">
+        
+        <!-- Live Totals Metric Cards -->
+        <div class="grid grid-cols-2 lg:grid-cols-5 gap-3">
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
+            <span class="text-xs font-semibold text-slate-500">Direct Subtotal</span>
+            <div id="budget-direct-total" class="text-xl sm:text-2xl font-black text-slate-900 font-mono mt-1">₹2,85,000</div>
+            <p class="text-[10px] text-slate-400 mt-0.5">Sum of all itemized lines</p>
+          </div>
+
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
+            <span class="text-xs font-semibold text-slate-500">Contingency Reserve</span>
+            <div id="budget-contingency-amount" class="text-xl sm:text-2xl font-black text-amber-600 font-mono mt-1">₹28,500</div>
+            <p class="text-[10px] text-slate-400 mt-0.5">Safety cushion for unforeseen</p>
+          </div>
+
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs col-span-2 lg:col-span-1">
+            <span class="text-xs font-semibold text-slate-500">Net Estimated Budget</span>
+            <div id="budget-grand-total" class="text-xl sm:text-2xl font-black text-sky-900 font-mono mt-1">₹3,13,500</div>
+            <p class="text-[10px] text-slate-400 mt-0.5">Direct + Contingency</p>
+          </div>
+
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
+            <span class="text-xs font-semibold text-slate-500">Cost per Delegate</span>
+            <div id="budget-per-delegate" class="text-xl sm:text-2xl font-black text-slate-800 font-mono mt-1">₹261</div>
+            <p class="text-[10px] text-slate-400 mt-0.5">Based on target footfall</p>
+          </div>
+
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
+            <span class="text-xs font-semibold text-slate-500">Projected Revenue & Balance</span>
+            <div id="budget-projected-revenue" class="text-sm font-bold text-slate-800 font-mono mt-1">₹3,00,000</div>
+            <div id="budget-net-balance" class="text-xs font-bold text-emerald-700 font-mono mt-0.5">+₹15,000</div>
+          </div>
+        </div>
+
+        <!-- Controls & Parameter Adjustments -->
+        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex flex-wrap items-center justify-between gap-4">
+          <div class="flex flex-wrap items-center gap-4 text-xs">
+            <label class="flex items-center gap-2">
+              <span class="font-bold text-slate-700">Contingency Rate:</span>
+              <select id="budget-contingency-rate-select" class="px-2.5 py-1.5 border border-slate-300 rounded-md bg-white font-semibold text-slate-800 focus:outline-none focus:ring-1 focus:ring-sky-500">
+                <option value="0.05">5% (Minimal)</option>
+                <option value="0.10" selected>10% (Standard Academic)</option>
+                <option value="0.15">15% (Conservative)</option>
+                <option value="0.20">20% (High Safety)</option>
+              </select>
+            </label>
+
+            <label class="flex items-center gap-2">
+              <span class="font-bold text-slate-700">Expected Footfall:</span>
+              <input type="number" id="budget-footfall-input" value="1200" min="100" max="5000" step="50" 
+                     class="w-20 px-2 py-1 border border-slate-300 rounded-md font-semibold text-center text-slate-800 focus:outline-none focus:ring-1 focus:ring-sky-500">
+              <span class="text-slate-500">students</span>
+            </label>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button type="button" id="btn-reset-budget" class="px-3 py-1.5 rounded-lg border border-slate-300 hover:bg-slate-100 text-slate-700 text-xs font-semibold transition-colors cursor-pointer">
+              ↺ Reset to Proposed Default
+            </button>
+          </div>
+        </div>
+
+        <!-- Interactive Budget Table -->
+        <div class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+          <div class="p-4 border-b border-slate-200 flex items-center justify-between">
+            <div>
+              <h3 class="text-base font-bold text-slate-900">Itemized Expense Categories</h3>
+              <p class="text-xs text-slate-500">Edit quantities or unit prices directly to update totals live. All edits persist in your browser.</p>
+            </div>
+            <span class="text-xs px-2.5 py-1 rounded bg-slate-100 text-slate-700 font-mono">Currency: INR (₹)</span>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-slate-50 border-b border-slate-200 text-slate-700 text-xs font-semibold">
+                  <th class="py-3 px-4 w-12">#</th>
+                  <th class="py-3 px-4 min-w-[280px]">Item Description & Category</th>
+                  <th class="py-3 px-4 text-center w-36">Quantity</th>
+                  <th class="py-3 px-4 text-right w-36">Unit Price (₹)</th>
+                  <th class="py-3 px-4 text-right w-36">Subtotal (₹)</th>
+                  <th class="py-3 px-4 text-center w-16">Action</th>
+                </tr>
+              </thead>
+              <tbody id="budget-table-body">
+                <!-- Populated dynamically via budget.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Add Custom Expense Form & Category Breakdown Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+          <!-- Add Item Form -->
+          <div class="lg:col-span-2 bg-white p-5 rounded-xl border border-slate-200 shadow-xs space-y-4">
+            <h4 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+              <svg class="w-4 h-4 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+              Add Custom Expense Item
+            </h4>
+            
+            <form id="add-expense-form" class="space-y-3">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Expense Category</label>
+                  <select id="new-item-category" class="w-full text-xs p-2 border border-slate-300 rounded-lg bg-white focus:outline-none focus:ring-1 focus:ring-sky-500">
+                    <option value="Stage & Venue Infrastructure">Stage & Venue Infrastructure</option>
+                    <option value="Guest Hospitality & Honorarium">Guest Hospitality & Honorarium</option>
+                    <option value="Prizes & Awards">Prizes & Awards</option>
+                    <option value="Delegate Kits & Stationery">Delegate Kits & Stationery</option>
+                    <option value="Food & Refreshments">Food & Refreshments</option>
+                    <option value="Publicity & Marketing">Publicity & Marketing</option>
+                    <option value="Logistics, Safety & Volunteer Support">Logistics, Safety & Volunteer Support</option>
+                    <option value="Miscellaneous & Contingency">Miscellaneous & Contingency</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Item Description</label>
+                  <input type="text" id="new-item-name" required placeholder="e.g. Campus Wi-Fi Booster Antenna" 
+                         class="w-full text-xs p-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-sky-500">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Quantity</label>
+                  <input type="number" id="new-item-qty" min="1" value="1" 
+                         class="w-full text-xs p-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-sky-500">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Unit Cost (₹)</label>
+                  <input type="number" id="new-item-cost" min="0" step="50" value="1000" 
+                         class="w-full text-xs p-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-sky-500">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Notes / Supplier</label>
+                  <input type="text" id="new-item-notes" placeholder="Optional notes" 
+                         class="w-full text-xs p-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-sky-500">
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between pt-2">
+                <span id="budget-add-notification" class="text-xs text-emerald-700 font-semibold hidden">✓ Item added to budget table!</span>
+                <button type="submit" class="px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition-colors cursor-pointer ml-auto">
+                  + Add Expense to Table
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Category Breakdown Summary -->
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-xs space-y-3">
+            <h4 class="text-sm font-bold text-slate-900">Category Share</h4>
+            <div id="budget-category-breakdown" class="space-y-1">
+              <!-- Filled dynamically via budget.js -->
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ==============================================
+           TAB F: PROMOTION & APPROVALS
+           ============================================== -->
+      <section id="tab-approvals" class="tab-panel hidden space-y-6">
+        
+        <!-- Promotion Plan Card -->
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs space-y-4">
+          <div class="flex items-center justify-between">
+            <h2 class="text-xl sm:text-2xl font-black text-slate-900">Promotion & Outreach Plan</h2>
+            <span class="text-xs px-2.5 py-1 bg-amber-50 text-amber-800 font-bold rounded border border-amber-200">50 Target Colleges</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Multi-channel campaign reaching undergraduate and polytechnic students across Coimbatore, Tiruppur, Erode, Salem, and neighboring Kerala districts.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+              <div class="w-8 h-8 rounded-lg bg-sky-100 text-sky-700 flex items-center justify-center font-bold text-sm">
+                🖨️
+              </div>
+              <h4 class="font-bold text-xs text-slate-900">Printed Posters & Dispatch</h4>
+              <p class="text-xs text-slate-600">150 glossy A3 posters printed and speed-posted to 50 engineering college HODs and notice boards.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+              <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">
+                📱
+              </div>
+              <h4 class="font-bold text-xs text-slate-900">Student Ambassador Network</h4>
+              <p class="text-xs text-slate-600">WhatsApp and Telegram broadcast circles with designated campus reps circulating registration flyers and rulebooks.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+              <div class="w-8 h-8 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-sm">
+                📸
+              </div>
+              <h4 class="font-bold text-xs text-slate-900">Instagram & Social Reels</h4>
+              <p class="text-xs text-slate-600">Daily countdown stories, teaser trailers, celebrity guest reveal clips, and competition rules via @kitcoimbatore_udhayam.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+              <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-sm">
+                🌐
+              </div>
+              <h4 class="font-bold text-xs text-slate-900">College Portal & Mailers</h4>
+              <p class="text-xs text-slate-600">Dedicated symposium portal on kitcbe.com with abstract upload form, QR check-in generation, and route directions.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Approvals Checklist Card -->
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg font-bold text-slate-900">College Approvals & Authority Checklist</h3>
+                <span id="approvals-count-badge" class="px-2 py-0.5 rounded-full bg-slate-100 text-slate-800 text-xs font-mono font-bold">5/8</span>
+              </div>
+              <p class="text-xs text-slate-500 mt-0.5">Toggle checkboxes to update sanction status. State is automatically preserved in your browser.</p>
+            </div>
+
+            <button type="button" id="btn-reset-approvals" class="text-xs font-semibold text-slate-500 hover:text-slate-800 underline self-start sm:self-auto cursor-pointer">
+              Reset Checkmarks
+            </button>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="space-y-1.5 bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <div class="flex justify-between text-xs font-bold text-slate-800">
+              <span>Overall Administrative Readiness</span>
+              <span id="approvals-progress-text" class="font-mono text-emerald-700">5 of 8 Cleared (63%)</span>
+            </div>
+            <div class="w-full bg-slate-200 rounded-full h-3 overflow-hidden">
+              <div id="approvals-progress-fill" class="bg-emerald-500 h-3 rounded-full transition-all duration-300" style="width: 63%;"></div>
+            </div>
+          </div>
+
+          <!-- Dynamic Checklist Items -->
+          <div id="approvals-container" class="space-y-3 pt-2">
+            <!-- Populated dynamically via app.js -->
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- ==============================================
+           TAB G: REVIEW & DOCUMENTATION
+           ============================================== -->
+      <section id="tab-review" class="tab-panel hidden space-y-6">
+        
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs space-y-2">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <h2 class="text-xl sm:text-2xl font-black text-slate-900">Post-Event Review & Metrics Framework</h2>
+            <span class="text-xs px-2.5 py-1 bg-sky-50 text-sky-800 font-bold rounded border border-sky-200">Quality Assurance</span>
+          </div>
+          <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-600 leading-relaxed">
+            <strong>Transparency Notice:</strong> This section provides the post-event evaluation protocol and sample post-mortem benchmark data illustrating how the organizing committee will audit attendance, budget variance, participant satisfaction, and operational lessons learned.
+          </div>
+        </div>
+
+        <!-- Metric Comparison Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-xs space-y-2">
+            <span class="text-xs font-semibold text-slate-500">Attendance: Planned vs Actual</span>
+            <div class="flex items-baseline gap-2">
+              <span class="text-2xl font-black text-slate-900">1,245</span>
+              <span class="text-xs text-slate-400 font-mono">/ 1,200 Target</span>
+            </div>
+            <p class="text-xs text-emerald-700 font-semibold">+3.75% Higher Footfall (48 Colleges)</p>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-xs space-y-2">
+            <span class="text-xs font-semibold text-slate-500">Budget Variance: Planned vs Spend</span>
+            <div class="flex items-baseline gap-2">
+              <span class="text-2xl font-black text-slate-900 font-mono">₹2,78,600</span>
+              <span class="text-xs text-slate-400 font-mono">/ ₹2,85,000</span>
+            </div>
+            <p class="text-xs text-emerald-700 font-semibold">+₹6,400 Saved (Under Budget)</p>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-xs space-y-2">
+            <span class="text-xs font-semibold text-slate-500">Overall Participant Satisfaction</span>
+            <div class="flex items-baseline gap-2">
+              <span class="text-2xl font-black text-slate-900">4.6</span>
+              <span class="text-xs text-slate-400 font-mono">/ 5.0 Stars</span>
+            </div>
+            <p class="text-xs text-slate-500">Based on 890 verified survey responses</p>
+          </div>
+        </div>
+
+        <!-- Satisfaction Breakdown & Lessons Learned Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          
+          <!-- Category Scores -->
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs space-y-4">
+            <h3 class="text-base font-bold text-slate-900">Feedback Survey Breakdown</h3>
+            <div id="review-survey-breakdown" class="space-y-3">
+              <!-- Populated dynamically via app.js -->
+            </div>
+          </div>
+
+          <!-- Lessons Learned & Action Items -->
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs space-y-4">
+            <h3 class="text-base font-bold text-slate-900">Lessons Learned & Improvements for Next Edition</h3>
+            <div id="review-lessons-container" class="space-y-3">
+              <!-- Populated dynamically via app.js -->
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ==============================================
+           TAB H: OFFICIAL EVENT PROPOSAL & DOCUMENTS
+           ============================================== -->
+      <section id="tab-deliverables" class="tab-panel hidden space-y-8">
+        
+        <!-- Action Toolbar -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-5 rounded-xl border border-slate-200 shadow-xs">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-black text-slate-900">Official Event Proposal &amp; Document Hub</h2>
+            <p class="text-xs text-slate-500 mt-0.5">Student General Secretary: Ms. Priyadharshini • KIT – Kalaignarkarunanidhi Institute of Technology, Coimbatore</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button type="button" data-action="print-event-plan" class="px-3.5 py-2 rounded-lg bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold shadow-xs transition-colors cursor-pointer flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+              Print / Save Event Plan as PDF
+            </button>
+          </div>
+        </div>
+
+        <!-- Proposal Highlights & Submission Compliance Matrix -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          
+          <!-- Proposal Highlights Card -->
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs space-y-4">
+            <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+              <svg class="w-5 h-5 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+              Master Event Proposal Highlights
+            </h3>
+            <div class="space-y-2.5 text-xs text-slate-700">
+              <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-100 flex items-center justify-between">
+                <span class="font-semibold text-slate-800">Event Title:</span>
+                <span class="font-bold text-sky-900">UDHAYAM 2027 (Techno-Cultural Fest)</span>
+              </div>
+              <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-100 flex items-center justify-between">
+                <span class="font-semibold text-slate-800">Host College:</span>
+                <span class="text-slate-900 font-medium">KIT Coimbatore (Autonomous)</span>
+              </div>
+              <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-100 flex items-center justify-between">
+                <span class="font-semibold text-slate-800">Proposed Dates:</span>
+                <span class="text-slate-900 font-medium">February 26–27, 2027 (2 Days)</span>
+              </div>
+              <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-100 flex items-center justify-between">
+                <span class="font-semibold text-slate-800">Target Attendance:</span>
+                <span class="text-slate-900 font-medium">1,200 Participants (45+ Colleges)</span>
+              </div>
+              <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-100 flex items-center justify-between">
+                <span class="font-semibold text-slate-800">Student General Secretary:</span>
+                <span class="font-bold text-slate-900">Ms. Priyadharshini (Final CSE)</span>
+              </div>
+              <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-100 flex items-center justify-between">
+                <span class="font-semibold text-slate-800">Faculty Chief Coordinator:</span>
+                <span class="text-slate-900 font-medium">Dr. S. Vasanthkumar (Prof/CSE)</span>
+              </div>
+              <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-100 flex items-center justify-between">
+                <span class="font-semibold text-slate-800">Core Campus Venues:</span>
+                <span class="text-slate-900 font-medium">Dr. Kalaignar Auditorium &amp; Labs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Academic Submission Package Checklist -->
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs space-y-4">
+            <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+              <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              Academic Submission &amp; Compliance Package
+            </h3>
+            <ul class="space-y-3 text-xs text-slate-700">
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold text-sm leading-none mt-0.5">✓</span>
+                <div>
+                  <strong>Practical Event Plan Document:</strong>
+                  <p class="text-slate-500 mt-0.5">Includes institutional facts, SMART objectives, 6-week milestones, itemized budget with 10% contingency, risk plans, and official signature blocks.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold text-sm leading-none mt-0.5">✓</span>
+                <div>
+                  <strong>Single-Click Browser Print / PDF Exporter:</strong>
+                  <p class="text-slate-500 mt-0.5">Click "Print / Save Event Plan as PDF" to generate a clean A4 document with navigation buttons automatically hidden.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold text-sm leading-none mt-0.5">✓</span>
+                <div>
+                  <strong>Official Vector Poster Artwork:</strong>
+                  <p class="text-slate-500 mt-0.5">High-resolution vector SVG poster ready for campus notice boards, social circulars, and college flex prints.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold text-sm leading-none mt-0.5">✓</span>
+                <div>
+                  <strong>Clean Source Code &amp; Documentation:</strong>
+                  <p class="text-slate-500 mt-0.5">Lightweight HTML5, CSS3, and vanilla JavaScript runnable directly in any browser without external server setup.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- 3. OFFICIAL POSTER CONCEPT PREVIEW -->
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs space-y-4">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <div>
+              <h3 class="text-base font-bold text-slate-900">Event Poster Concept: UDHAYAM 2027</h3>
+              <p class="text-xs text-slate-500">Official promotional artwork formatted for campus flex banners, college notice boards, and digital circulars.</p>
+            </div>
+            <a href="./assets/poster-placeholder.svg" target="_blank" download="UDHAYAM_2027_Poster_KIT_Coimbatore.svg" 
+               class="px-3 py-1.5 rounded-lg border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-semibold">
+              Download Vector Poster (.SVG) ↓
+            </a>
+          </div>
+
+          <div class="max-w-md mx-auto p-2 bg-slate-950 rounded-xl shadow-lg border border-slate-800">
+            <img src="./assets/poster-placeholder.svg" alt="UDHAYAM 2027 Poster Concept - KIT Coimbatore" class="w-full h-auto rounded-lg">
+          </div>
+        </div>
+
+        <!-- 4. PRINTABLE EVENT PLAN DOCUMENT (A4 PREVIEW & DIRECT PRINT TARGET) -->
+        <div id="printable-event-plan-doc" class="bg-white p-8 sm:p-12 rounded-xl border border-slate-300 shadow-md space-y-6">
+          
+          <!-- Document Header -->
+          <div class="print-header text-center border-b-2 border-slate-900 pb-6 space-y-1">
+            <div class="text-xs font-bold tracking-widest text-slate-500 uppercase">Academic Event Proposal &amp; Management Plan</div>
+            <h1 class="text-2xl sm:text-3xl font-black text-slate-900">KIT – KALAIGNARKARUNANIDHI INSTITUTE OF TECHNOLOGY</h1>
+            <p class="text-xs text-slate-700">Kannampalayam Post, Coimbatore - 641 402, Tamil Nadu, India</p>
+            <p class="text-[11px] text-slate-500">Autonomous Institution | Affiliated to Anna University, Chennai | Accredited with NAAC 'A' Grade &amp; NBA</p>
+            <div class="pt-3">
+              <span class="inline-block px-3 py-1 bg-slate-900 text-white text-xs font-bold uppercase tracking-wider rounded">
+                UDHAYAM 2027: Master Event Plan
+              </span>
+            </div>
+          </div>
+
+          <!-- Document Metadata -->
+          <div class="grid grid-cols-2 gap-4 text-xs pb-4 border-b border-slate-200">
+            <div>
+              <p><strong>Event Title:</strong> UDHAYAM 2027 (Techno-Cultural Fest)</p>
+              <p><strong>Proposed Dates:</strong> February 26 – 27, 2027 (2 Days)</p>
+              <p><strong>Proposed Venue:</strong> Dr. Kalaignar Auditorium &amp; Labs, KIT</p>
+              <p><strong>Target Footfall:</strong> 1,200 Participants (45 Colleges)</p>
+            </div>
+            <div>
+              <p><strong>Faculty Coordinator:</strong> Dr. S. Vasanthkumar (Prof/CSE)</p>
+              <p><strong>Student Convener:</strong> Ms. Priyadharshini (Final B.Tech CSE)</p>
+              <p><strong>Estimated Gross Budget:</strong> Dynamic (Itemized below)</p>
+              <p><strong>Document Status:</strong> Proposed Master Model for Assignment</p>
+            </div>
+          </div>
+
+          <!-- Section 1: Objectives -->
+          <div class="space-y-2">
+            <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wide border-b border-slate-200 pb-1">1. Event Objectives &amp; Expected Outcomes</h3>
+            <p class="text-xs text-slate-700 leading-relaxed">
+              UDHAYAM 2027 is organized to bridge theoretical classroom engineering with practical problem-solving. Core outcomes include: (a) evaluating 120+ research paper abstracts across computing, electronics, and mechanical engineering; (b) displaying 40+ hardware prototypes addressing sustainable agriculture and automotive tech; (c) exposing students to keynote speakers from Coimbatore's industrial hub; and (d) training 80 student committee leaders under Student General Secretary Ms. Priyadharshini.
+            </p>
+          </div>
+
+          <!-- Section 2: Preparation Timeline -->
+          <div class="space-y-2">
+            <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wide border-b border-slate-200 pb-1">2. 6-Week Milestone Preparation Schedule</h3>
+            <div class="text-xs text-slate-700 space-y-1">
+              <p>• <strong>T-6 Weeks (Jan 10–17):</strong> Proposal submission; Principal &amp; Management administrative sanction; auditorium booking.</p>
+              <p>• <strong>T-4 Weeks (Jan 18–31):</strong> Chief guest invitation dispatch; printing 150 posters; dispatch to 50 colleges; portal launch.</p>
+              <p>• <strong>T-2 Weeks (Feb 01–14):</strong> Research paper screening; catering contract for 1,200 delegates; delegate kit procurement.</p>
+              <p>• <strong>T-1 Week (Feb 15–22):</strong> AV sound test; 62.5 kVA diesel generator failover dry-run; local police &amp; medical station tie-up.</p>
+              <p>• <strong>T-1 Day (Feb 25):</strong> Stage backdrop flex mounting; pre-assembling 1,200 kits; volunteer walkie-talkie briefing.</p>
+              <p>• <strong>Event Days (Feb 26–27):</strong> Live execution; 14 parallel tracks; score audit; grand valedictory awards ceremony.</p>
+              <p>• <strong>T+1 Week (Feb 28–Mar 06):</strong> Accounts reconciliation with bills; participant survey audit; digital certificate dispatch.</p>
+            </div>
+          </div>
+
+          <!-- Section 3: Live Budget Summary Table -->
+          <div class="space-y-2">
+            <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wide border-b border-slate-200 pb-1">3. Itemized Budget &amp; Financial Sanction</h3>
+            <div id="print-budget-summary-table">
+              <!-- Populated dynamically via app.js -->
+            </div>
+          </div>
+
+          <!-- Section 4: Risk & Contingency -->
+          <div class="space-y-2">
+            <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wide border-b border-slate-200 pb-1">4. Safety, Risk Management &amp; Accessibility</h3>
+            <p class="text-xs text-slate-700 leading-relaxed">
+              Backup power is guaranteed via dedicated automated 62.5 kVA diesel generator on standby. In case of rain, all events are securely housed in concrete auditoriums and lab complexes. Emergency first-aid is staffed in the central foyer with nursing assistance and on-call ambulance coverage. Wheelchair ramps provide universal accessibility to the auditorium and laboratory blocks.
+            </p>
+          </div>
+
+          <!-- Document Signatures Block -->
+          <div class="print-footer-signatures pt-10 border-t border-slate-300 grid grid-cols-3 gap-6 text-center text-xs">
+            <div class="space-y-12">
+              <div class="border-b border-slate-400 pb-1"></div>
+              <div>
+                <strong>Ms. Priyadharshini</strong><br>
+                Student General Secretary<br>
+                Student Organizing Council
+              </div>
+            </div>
+            <div class="space-y-12">
+              <div class="border-b border-slate-400 pb-1"></div>
+              <div>
+                <strong>Dr. S. Vasanthkumar</strong><br>
+                Faculty Chief Coordinator<br>
+                Dept. of Computer Science &amp; Engg.
+              </div>
+            </div>
+            <div class="space-y-12">
+              <div class="border-b border-slate-400 pb-1"></div>
+              <div>
+                <strong>Dr. N. Mohandas Gandhi</strong><br>
+                Principal<br>
+                KIT Coimbatore
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800 no-print mt-auto">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-sm">
+              KIT
+            </div>
+            <div>
+              <div class="font-bold text-slate-200">Campus Event Planner • UDHAYAM 2027</div>
+              <div class="text-[11px] text-slate-400">KIT – Kalaignarkarunanidhi Institute of Technology, Coimbatore</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 text-xs font-semibold">
+            <button type="button" data-jump-tab="plan" class="hover:text-white cursor-pointer">Event Plan</button>
+            <button type="button" data-jump-tab="budget" class="hover:text-white cursor-pointer">Budget</button>
+            <button type="button" data-jump-tab="deliverables" class="hover:text-amber-400 cursor-pointer">Proposal &amp; Poster</button>
+            <button type="button" data-action="print-event-plan" class="text-sky-400 hover:text-sky-300 cursor-pointer">Print PDF</button>
+          </div>
+        </div>
+        <div class="border-t border-slate-800 pt-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-400">
+          <p>Autonomous College Event Planning &amp; Management Assignment • Student General Secretary: Ms. Priyadharshini</p>
+          <p>Institution: KIT Coimbatore • Flagship Festival: UDHAYAM 2027</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- SCRIPT DEPENDENCIES (Pure Vanilla - Runs with Live Server or Vite) -->
+    <script src="./data/event-data.js"></script>
+    <script src="./js/budget.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

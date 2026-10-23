@@ -1,147 +1,185 @@
-# 🎓 Campus Event Planner
-
-### Plan Better. Work Together. Create Memorable Events.
-
-A simple, responsive web application designed to help college students plan and organize campus events efficiently. It brings event schedules, budgeting, team responsibilities, promotion, approvals, and post-event reviews together in one place.
-
-\<p align="center">
-&#x20; \<strong>📅 Smart Planning • 💰 Budget Management • 🤝 Team Coordination\</strong>
-\</p>
+# Campus Event Planner: UDHAYAM 2027
+**College Event Planning and Management Assignment**  
+*KIT – Kalaignarkarunanidhi Institute of Technology, Coimbatore, Tamil Nadu*  
+*Student General Secretary: Ms. Priyadharshini (Final Year B.Tech CSE)*
 
 ---
 
-## 📌 About the Project
+## 1. Project Overview
+**Campus Event Planner** is a clean, practical web application and documentation repository created by a college student for an academic event planning assignment. 
 
-Organizing a college event involves several tasks, from preparing schedules and managing expenses to coordinating volunteers and collecting feedback.
+The project develops a comprehensive operational plan for the upcoming edition of **UDHAYAM 2027**—the annual national-level techno-cultural festival and student symposium held at **KIT – Kalaignarkarunanidhi Institute of Technology**, Kannampalayam Post, Coimbatore, Tamil Nadu, coordinated by **Ms. Priyadharshini** (Student General Secretary) and the Student Organizing Council.
 
-The **Campus Event Planner** provides a centralized place to organize these activities. It is designed as a beginner-friendly web development project using HTML, CSS, and JavaScript.
+### Event Plan & Project Hub Includes:
+1. **Practical Event Plan (`documents/event-plan.md` & In-App Printable View):** An academic-grade event proposal with objectives, dates, 6-week preparation timeline, itemized budget, venue allocation, 8 required college approvals, and risk mitigation strategies.
+2. **Interactive Web Application (`index.html`):** A client-side portal featuring a real-time reactive budget calculator, interactive college approval tracker, filterable event-day schedule, and team matrix.
+3. **Official Event Poster Concept (`assets/poster-placeholder.svg`):** Vector poster asset formatted for campus flex banners, digital notice circulars, and promotional social media.
+4. **Student Submission Checklist (`documents/submission-checklist.md`):** A verification guide for final academic submission and project evaluation.
 
-The project focuses on practical event planning, simple navigation, responsive design, and easy-to-understand code.
+---
 
-## ✨ Features
+## 2. Institution & Symposium Overview
+* **College:** KIT – Kalaignarkarunanidhi Institute of Technology, Coimbatore.
+* **Affiliation & Accreditations:** Autonomous institution affiliated to Anna University, Chennai; Approved by AICTE, New Delhi; Accredited with NAAC 'A' Grade and NBA.
+* **Event:** **UDHAYAM 2027** is KIT's flagship inter-collegiate symposium and fest, featuring technical tracks (paper presentations, project expos, coding challenges) and cultural arts.
+* **Planning Scope:** Historical institutional credentials and campus venues (such as the 1,500-seat *Dr. Kalaignar Auditorium* and computing laboratories) are verified facts. The proposed event dates (**February 26–27, 2027**), itemized budget figures (**₹3,13,500 gross**), and expected attendance (**1,200 delegates**) are proposed estimates formulated specifically for this assignment.
 
-| Feature                  | Description                                                             |
-| ------------------------ | ----------------------------------------------------------------------- |
-| 📊 Event Dashboard       | View event details, goals, and planning summaries.                      |
-| 🗓️ Event Schedule       | Organize activities with time slots and assigned responsibilities.      |
-| 💰 Budget Calculator     | Calculate estimated expenses and total costs.                           |
-| 👥 Team Management       | Define event-day roles and responsibilities.                            |
-| 📢 Promotion Planner     | Organize announcements, posters, and promotional activities.            |
-| ✅ Approval Checklist     | Track venue, budget, equipment, and other required approvals.           |
-| 📸 Event Documentation   | Plan attendance records, photographs, videos, and feedback collection.  |
-| 📈 Post-Event Review     | Compare planned results with actual outcomes and identify improvements. |
-| 🖨️ Printable Event Plan | Print or save the event plan as a PDF through the browser.              |
-| 📱 Responsive Design     | Use the application on desktop and mobile screens.                      |
+---
 
-## 🛠️ Technologies Used
+## 3. Key Website Features
 
-\<p>
-&#x20; \<img src="[https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge\&logo=html5\&logoColor=white)" alt="HTML5" />
-&#x20; \<img src="[https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge\&logo=css3\&logoColor=white)" alt="CSS3" />
-&#x20; \<img src="[https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge\&logo=javascript\&logoColor=black)" alt="JavaScript" />
-\</p>
+### A. Home Dashboard
+* Event introduction, institutional badge, and proposed status notices.
+* Real-time summary metric cards for attendance, estimated gross budget, cost per delegate, and approval status.
+* SMART criteria objectives summary and quick navigation jumps.
 
-- **HTML5** — Structures the website content.
-- **CSS3** — Provides styling, layouts, and responsive design.
-- **JavaScript** — Handles interactions, budget calculations, and checklist functionality.
-- **localStorage** — Stores checklist progress in the browser, if implemented.
+### B. Practical Event Plan
+* Event objectives and measurable outcomes.
+* 6-week preparation milestone schedule (T-6 weeks to Post-Event T+1 week).
+* Campus venue allocations (Auditorium, Central Seminar Hall, Mechanical/Aero Hangars, Computer Labs).
+* Risk mitigation matrix (power failure backup via 62.5 kVA diesel generator, medical desk, crowd overflow).
 
-## 📂 Project Structure
+### C. Event-Day Schedule
+* Realistic 11-slot timeline from 08:30 AM registration to 05:30 PM dispersal.
+* Interactive category filters: *All*, *Technical*, *Non-Technical & Creative*, *Ceremonies*, and *Breaks*.
 
-```text
+### D. Team Responsibilities
+* Committee matrix covering 9 faculty and student roles (Faculty Chief Coordinator, Student Convener, Registration, Labs, Hospitality, Media, Stage, Safety, and Documentation).
+* Real-time text search to filter by role or member name.
+
+### E. Interactive Budget Calculator
+* Itemized expense table categorized by Stage, Hospitality, Prizes, Kits, Catering, and Marketing.
+* Instant dynamic recalculation: changing a quantity or unit price updates row subtotal, direct expenses, 10% contingency reserve, grand total, and per-delegate cost.
+* Form to add custom expense line items with instant validation.
+* Local persistence: All budget changes are stored in the browser's `localStorage`.
+* One-click "Reset to Proposed Default" button.
+
+### F. Promotion & Approvals Checklist
+* Multi-channel promotion strategy (150 printed posters to 50 colleges, student ambassadors, Instagram reels, and web portal).
+* Interactive 8-point college approvals checklist (Principal sanction, venue allocation, budget clearance, police intimation, medical standby).
+* Animated administrative readiness progress bar that persists across page refreshes.
+
+### G. Post-Event Review & Documentation
+* Sample post-mortem framework comparing planned vs. actual metrics (1,200 planned vs 1,245 actual attendance; ₹2,85,000 budget vs ₹2,78,600 spend).
+* Satisfaction survey breakdown across 5 dimensions (4.6 / 5.0 overall score).
+* Documented lessons learned and specific operational improvements for the next edition.
+
+### H. Event Proposal Documents & Exports
+* Single-click **"Print / Save Plan as PDF"** feature optimized for standard A4 paper with university headers, itemized budgets, and signature lines.
+* Complete academic event proposal preview with 6-week milestones and risk contingency plan.
+* Official vector SVG poster concept preview with direct download link.
+* Student academic verification and final submission checklist.
+
+---
+
+## 4. Technologies Used
+* **HTML5:** Semantic structure, accessible form controls, clean document layout.
+* **CSS3:** Custom styles, responsive grid/flexbox layouts, print media stylesheet (`@media print`).
+* **Tailwind CSS:** Modern utility styling.
+* **Vanilla JavaScript (ES6+):** Modular DOM manipulation, reactive budget math, local persistence, event delegation.
+* **Web Storage API (`localStorage`):** Preserves budget numbers and approval states without external database dependencies.
+* **Zero Heavy Frameworks:** No React, Node.js, MongoDB, or paid APIs required for local execution.
+
+---
+
+## 5. Folder Structure
+```
 college-event-planner/
-│
-├── index.html
+├── index.html                   # Main application entry point
 ├── css/
-│   └── style.css
+│   └── style.css                # Typography, custom styles, and print layout
 ├── js/
-│   ├── app.js
-│   └── budget.js
+│   ├── app.js                   # Navigation, schedule filter, approvals, and print hooks
+│   └── budget.js                # Reactive budget calculations and localStorage sync
 ├── data/
-│   └── event-data.js
+│   └── event-data.js            # Master data store (college facts, timeline, roles, budget)
 ├── documents/
-│   ├── event-plan.md
-│   ├── video-script.md
-│   └── submission-checklist.md
+│   ├── event-plan.md            # Practical Event Plan & Proposal (Markdown)
+│   └── submission-checklist.md  # Student submission verification checklist
 ├── assets/
-│   └── poster-placeholder.png
-├── README.md
-└── .gitignore
+│   ├── images/                  # High-quality field photographs (Auditorium, Hackathon, Robotics, Cultural)
+│   └── poster-placeholder.svg   # Official event poster vector concept
+├── metadata.json                # Project descriptor
+├── README.md                    # Project documentation
+└── .gitignore                   # Standard repository ignore file
 ```
 
-*Note: The structure above is the proposed organization. Update it to match the actual files in your repository.*
+---
 
+## 6. How to Run Locally
 
-### Installation
+### Option 1: Double-Click (No Installation Needed)
+1. Download or clone this repository.
+2. Locate the `index.html` file in the project folder.
+3. Double-click `index.html` to open it in your default web browser (Chrome, Edge, Firefox, or Safari).
 
-**1. Clone the repository**
+### Option 2: VS Code Live Server
+1. Open the project folder in **Visual Studio Code**.
+2. Install the **Live Server** extension by *Ritwick Dey* (if not already installed).
+3. Right-click `index.html` and select **"Open with Live Server"**.
+4. The site will open at `http://127.0.0.1:5500/index.html`.
 
+### Option 3: Terminal / Vite Dev Server (If Node.js is present)
 ```bash
-git clone https://github.com/YOUR-USERNAME/college-event-planner.git
+npm install
+npm run dev
 ```
+Open `http://localhost:3000` in your browser.
 
-**2. Open the project folder**
+---
 
-```bash
-cd college-event-planner
-```
+## 7. How to Test the Features
+1. **Navigation:** Click each tab in the navigation bar (*Home, Event Plan, Schedule, Team, Budget, Approvals, Review, Deliverables*). Verify smooth panel switching.
+2. **Budget Recalculations:**
+   * Go to the **Budget Calculator** tab.
+   * Click the `+` button on *Participant Delegate Kit* to increase quantity from 1,200 to 1,300.
+   * Observe that the line total, the direct subtotal, the 10% contingency amount, and the cost per delegate update instantly.
+   * Add a new expense using the form at the bottom (e.g., "Drone Battery Packs", Qty: 2, Unit: ₹2,500). Verify that it appears in the table.
+   * Refresh the page; verify that your custom item and edited values remain intact in `localStorage`.
+   * Click **"Reset to Proposed Default"** to restore initial estimates.
+3. **Approvals Checklist:**
+   * Go to **Promotion & Approvals**.
+   * Toggle the checkboxes for pending items.
+   * Observe the readiness percentage bar animate and the counter badge increment.
+   * Refresh the page to verify that the checkmarks persist.
+4. **Schedule & Team Filters:**
+   * In **Event-Day Schedule**, click the *"Technical"* filter chip to see only technical competitions.
+   * In **Team Responsibilities**, type *"Registration"* in the search box to filter committee roles.
+5. **PDF / Print Layout Test:**
+   * Click the **"Print / Save Plan as PDF"** button.
+   * In your browser's print preview window, check that navigation bars and buttons are hidden, college headers are visible, and clean tables with signature blocks are displayed.
 
-**3. Run the application**
+---
 
-Open `index.html` directly in your browser, or open the project in VS Code and use the Live Server extension.
+## 8. How to Publish Using GitHub Pages
+You can host this project online for free using GitHub Pages:
 
-No backend server or database installation is required for the basic version.
+1. **Initialize Git & Push to GitHub:**
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit: College Event Planner for UDHAYAM 2027"
+   git branch -M main
+   git remote add origin https://github.com/<YOUR_USERNAME>/college-event-planner.git
+   git push -u origin main
+   ```
+2. **Enable GitHub Pages:**
+   * In your GitHub repository, click on **Settings** (top right tab).
+   * In the left sidebar, click **Pages**.
+   * Under **Build and deployment > Source**, select **Deploy from a branch**.
+   * Under **Branch**, select `main` and root `/(root)`, then click **Save**.
+3. **View Live Site:**
+   * Within 1–2 minutes, GitHub Pages will deploy your site to:  
+     `https://<YOUR_USERNAME>.github.io/college-event-planner/`
 
-## 💡 How to Use
+---
 
-1. Open the application and review the event dashboard.
-2. Enter the verified event details and objectives.
-3. Prepare the event schedule and preparation timeline.
-4. Add expected expenses and review the budget calculation.
-5. Assign responsibilities to the event team.
-6. Track promotion activities and approval requirements.
-7. Prepare documentation and feedback collection.
-8. Use the post-event review to record results and improvements.
-9. Print or save the event plan as a PDF.
+## 9. Known Limitations
+* **Browser Storage Scope:** Budget adjustments and approval checkmarks are stored locally in the individual user's browser via `localStorage`. Changes do not synchronize across different devices or incognito sessions.
+* **Evaluation Data:** Post-event attendance and satisfaction metrics are sample benchmark datasets included to illustrate the post-event audit framework for a proposed future event.
+* **Offline Vector Assets:** The event poster concept uses an SVG asset (`assets/poster-placeholder.svg`) which renders cleanly in any browser without requiring external image CDNs.
 
-*Available actions depend on the features implemented in the current version.*
+---
 
-## 🎯 Project Objectives
-
-- Simplify the planning of college events.
-- Organize event information in one place.
-- Improve budget awareness and resource planning.
-- Encourage teamwork and responsibility sharing.
-- Support proper documentation and post-event evaluation.
-- Build practical skills in frontend web development.
-
-
-
-## 🔮 Future Improvements
-
-- Online event registration.
-- Participant and volunteer management.
-- Calendar integration and event reminders.
-- Downloadable budget reports.
-- Event feedback analytics.
-- Backend database integration for shared event information.
-
-## 🎓 Academic Use
-
-This project is prepared as a college event-planning assignment. The event details, dates, budget, attendance, and responsibilities should be verified or clearly identified as proposed plans and estimates.
-
-The project can also serve as a starting point for students who want to learn frontend development through a practical campus-related problem.
-
-## 👩‍💻 Author
-
-**Priyadharshini M.**
-
-Computer Science and Engineering Student
-KIT – Kalaignarkarunanidhi Institute of Technology
-Coimbatore, Tamil Nadu, India
-
-
-
-\<p align="center">
-&#x20; \<strong>✨ Plan with purpose. Organize with confidence. Learn from every event. ✨\</strong>
-\</p>
+## 10. Academic Integrity & Declaration
+This project is an original academic submission prepared for a college event planning and management course. It integrates verified institutional data from **KIT – Kalaignarkarunanidhi Institute of Technology, Coimbatore**, with realistic proposed planning models.

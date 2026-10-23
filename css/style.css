@@ -1,0 +1,174 @@
+/**
+ * @file style.css
+ * Campus Event Planner - Custom Stylesheet
+ * KIT – Kalaignarkarunanidhi Institute of Technology, Coimbatore
+ * Provides typography, layout polish, interactive feedback, and print media optimization.
+ */
+
+:root {
+  --college-navy: #0f2a4a;
+  --college-gold: #d97706;
+  --college-crimson: #991b1b;
+  --surface-bg: #f8fafc;
+  --surface-card: #ffffff;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #1e293b;
+  background-color: #f1f5f9;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Tab panels animation */
+.tab-panel {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Numeric table styling */
+.budget-row input[type="number"]::-webkit-inner-spin-button,
+.budget-row input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.budget-row input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Sticky Nav blur */
+.nav-blur {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ===================================================
+   PRINT STYLES: Practical Event Plan Academic Report
+   Optimized for browser 'Save as PDF' & standard A4 paper
+   =================================================== */
+@media print {
+  /* Hide non-printable UI elements */
+  header,
+  footer,
+  nav,
+  #mobile-menu,
+  #mobile-menu-toggle,
+  .no-print,
+  button,
+  .tab-buttons,
+  #btn-script-timer-toggle,
+  #btn-script-timer-reset,
+  #btn-copy-script,
+  #add-expense-form,
+  .print\\:hidden {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Unhide printable document container regardless of tab */
+  #printable-event-plan-doc {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 15mm !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+
+  /* Hide all other sections */
+  #tab-home,
+  #tab-plan,
+  #tab-schedule,
+  #tab-team,
+  #tab-budget,
+  #tab-approvals,
+  #tab-review,
+  #script-reader-section,
+  #recording-checklist-section,
+  #submission-checklist-section,
+  #poster-preview-section {
+    display: none !important;
+  }
+
+  /* Document layout */
+  .page-break {
+    page-break-before: always;
+  }
+
+  h1, h2, h3, h4 {
+    color: #000000 !important;
+    page-break-after: avoid;
+  }
+
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin-bottom: 12pt !important;
+    font-size: 9.5pt !important;
+    page-break-inside: auto;
+  }
+
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+
+  th, td {
+    border: 1px solid #475569 !important;
+    padding: 6pt 8pt !important;
+  }
+
+  th {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+    font-weight: 700 !important;
+  }
+
+  /* Watermark or header border */
+  .print-header {
+    border-bottom: 2px solid #0f2a4a;
+    padding-bottom: 12pt;
+    margin-bottom: 16pt;
+  }
+
+  .print-footer-signatures {
+    margin-top: 35pt;
+    page-break-inside: avoid;
+  }
+}

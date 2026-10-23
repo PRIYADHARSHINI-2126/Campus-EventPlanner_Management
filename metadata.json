@@ -1,0 +1,8 @@
+{
+  "name": "Campus Event Planner - KIT Coimbatore UDHAYAM",
+  "description": "A practical event planning and management portal for UDHAYAM 2027 at KIT Coimbatore, led by Ms. Priyadharshini (Student General Secretary), featuring itemized budget calculator, approval tracking, day schedule, risk plan, poster concepts, and printable master event plan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

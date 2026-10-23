@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1130" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a192f" />
+      <stop offset="40%" stop-color="#0f2a4a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="50%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="1130" fill="url(#bgGrad)" />
+
+  <!-- Subtle Tech Grid Pattern -->
+  <g opacity="0.07" stroke="#38bdf8" stroke-width="1">
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="200" x2="800" y2="200" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+    <line x1="0" y1="500" x2="800" y2="500" />
+    <line x1="0" y1="600" x2="800" y2="600" />
+    <line x1="0" y1="700" x2="800" y2="700" />
+    <line x1="0" y1="800" x2="800" y2="800" />
+    <line x1="0" y1="900" x2="800" y2="900" />
+    <line x1="0" y1="1000" x2="800" y2="1000" />
+    
+    <line x1="100" y1="0" x2="100" y2="1130" />
+    <line x1="200" y1="0" x2="200" y2="1130" />
+    <line x1="300" y1="0" x2="300" y2="1130" />
+    <line x1="400" y1="0" x2="400" y2="1130" />
+    <line x1="500" y1="0" x2="500" y2="1130" />
+    <line x1="600" y1="0" x2="600" y2="1130" />
+    <line x1="700" y1="0" x2="700" y2="1130" />
+  </g>
+
+  <!-- Top Institutional Bar -->
+  <rect x="0" y="0" width="800" height="130" fill="#081426" opacity="0.9" />
+  <rect x="0" y="128" width="800" height="3" fill="url(#accentGrad)" />
+
+  <!-- College Crest Placeholder / Icon -->
+  <g transform="translate(60, 25)">
+    <circle cx="40" cy="40" r="38" fill="#1e293b" stroke="#f59e0b" stroke-width="2.5" />
+    <path d="M40 18 L60 32 L60 55 L40 68 L20 55 L20 32 Z" fill="none" stroke="#38bdf8" stroke-width="2" />
+    <circle cx="40" cy="43" r="10" fill="#f59e0b" />
+    <text x="40" y="47" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="bold" fill="#0f172a" text-anchor="middle">KIT</text>
+  </g>
+
+  <!-- Institution Titles -->
+  <text x="160" y="52" font-family="'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800" fill="#ffffff" letter-spacing="0.5">KIT – KALAIGNARKARUNANIDHI</text>
+  <text x="160" y="75" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#38bdf8" letter-spacing="1">INSTITUTE OF TECHNOLOGY</text>
+  <text x="160" y="96" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#94a3b8">Autonomous Institution | Kannampalayam, Coimbatore - 641 402 | Affiliated to Anna University</text>
+  <text x="160" y="112" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#f59e0b">Accredited with NAAC 'A' Grade &amp; NBA | AICTE Approved</text>
+
+  <!-- Event Header Section -->
+  <g transform="translate(400, 205)" text-anchor="middle">
+    <rect x="-160" y="-22" width="320" height="30" rx="15" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="0" y="-3" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#38bdf8" letter-spacing="2">ANNUAL NATIONAL FESTIVAL 2027</text>
+    
+    <!-- Mega Fest Title -->
+    <text x="0" y="80" font-family="'Segoe UI', Roboto, sans-serif" font-size="74" font-weight="900" fill="url(#accentGrad)" letter-spacing="4" filter="url(#glow)">UDHAYAM</text>
+    <text x="0" y="125" font-family="'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="700" fill="#ffffff" letter-spacing="1.5">NATIONAL TECHNO-CULTURAL SYMPOSIUM</text>
+    <text x="0" y="150" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-style="italic" fill="#cbd5e1">"Where Technology Meets Innovation &amp; Creative Expression"</text>
+  </g>
+
+  <!-- Date & Venue Highlight Card -->
+  <g transform="translate(100, 400)">
+    <rect x="0" y="0" width="600" height="85" rx="14" fill="#111c33" stroke="#f59e0b" stroke-width="2" />
+    
+    <!-- Date Block -->
+    <g transform="translate(40, 20)">
+      <text x="0" y="24" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#94a3b8" letter-spacing="1">EVENT DATES</text>
+      <text x="0" y="52" font-family="'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="800" fill="#ffffff">FEB 26 &amp; 27, 2027</text>
+    </g>
+
+    <!-- Divider -->
+    <line x1="280" y1="15" x2="280" y2="70" stroke="#334155" stroke-width="1.5" />
+
+    <!-- Venue Block -->
+    <g transform="translate(310, 20)">
+      <text x="0" y="24" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#94a3b8" letter-spacing="1">PROPOSED VENUE</text>
+      <text x="0" y="46" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#38bdf8">Dr. Kalaignar Auditorium</text>
+      <text x="0" y="62" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#cbd5e1">KIT Campus, Coimbatore</text>
+    </g>
+  </g>
+
+  <!-- Competitions & Highlights Grid -->
+  <g transform="translate(60, 520)">
+    <!-- Column 1: Technical Events -->
+    <rect x="0" y="0" width="320" height="340" rx="12" fill="#0c1a30" stroke="#1e3a5f" stroke-width="1.5" />
+    <path d="M 0 12 Q 0 0 12 0 L 308 0 Q 320 0 320 12 L 320 46 L 0 46 Z" fill="#1e293b" />
+    <text x="25" y="30" font-family="'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" fill="#38bdf8">⚡ TECHNICAL TRACKS</text>
+
+    <g transform="translate(25, 75)" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" fill="#e2e8f0">
+      <circle cx="5" cy="-4" r="3.5" fill="#f59e0b" />
+      <text x="20" y="0" font-weight="600">National Paper Presentation</text>
+      <text x="20" y="17" font-size="11" fill="#94a3b8">AI, CSE, Mech, ECE, Aero, Biotech</text>
+
+      <circle cx="5" cy="46" r="3.5" fill="#f59e0b" />
+      <text x="20" y="50" font-weight="600">Project Expo &amp; Hardware Hack</text>
+      <text x="20" y="67" font-size="11" fill="#94a3b8">Working prototypes &amp; IoT solutions</text>
+
+      <circle cx="5" cy="96" r="3.5" fill="#f59e0b" />
+      <text x="20" y="100" font-weight="600">Logical Rivera (Coding &amp; Debug)</text>
+      <text x="20" y="117" font-size="11" fill="#94a3b8">Algorithm speed tests &amp; syntax fixes</text>
+
+      <circle cx="5" cy="146" r="3.5" fill="#f59e0b" />
+      <text x="20" y="150" font-weight="600">Techfusion Quest (Tech Quiz)</text>
+      <text x="20" y="167" font-size="11" fill="#94a3b8">Multi-round audio-visual buzzers</text>
+
+      <circle cx="5" cy="196" r="3.5" fill="#f59e0b" />
+      <text x="20" y="200" font-weight="600">Spot the Bot / CAD Design</text>
+      <text x="20" y="217" font-size="11" fill="#94a3b8">Robotics navigation &amp; 3D modeling</text>
+    </g>
+
+    <!-- Column 2: Cultural & Non-Technical Events -->
+    <g transform="translate(360, 0)">
+      <rect x="0" y="0" width="320" height="340" rx="12" fill="#0c1a30" stroke="#1e3a5f" stroke-width="1.5" />
+      <path d="M 0 12 Q 0 0 12 0 L 308 0 Q 320 0 320 12 L 320 46 L 0 46 Z" fill="#1e293b" />
+      <text x="25" y="30" font-family="'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" fill="#f59e0b">🎭 NON-TECHNICAL &amp; ARTS</text>
+
+      <g transform="translate(25, 75)" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" fill="#e2e8f0">
+        <circle cx="5" cy="-4" r="3.5" fill="#38bdf8" />
+        <text x="20" y="0" font-weight="600">Lens &amp; Motion (Photography &amp; Reels)</text>
+        <text x="20" y="17" font-size="11" fill="#94a3b8">Campus theme photography contest</text>
+
+        <circle cx="5" cy="46" r="3.5" fill="#38bdf8" />
+        <text x="20" y="50" font-weight="600">Mind Snap &amp; Brain-OH-Bunch</text>
+        <text x="20" y="67" font-size="11" fill="#94a3b8">Visual puzzles, rebuses &amp; connections</text>
+
+        <circle cx="5" cy="96" r="3.5" fill="#38bdf8" />
+        <text x="20" y="100" font-weight="600">E-Sports Arena &amp; Online Battle</text>
+        <text x="20" y="117" font-size="11" fill="#94a3b8">LAN gaming tournaments &amp; mobile games</text>
+
+        <circle cx="5" cy="146" r="3.5" fill="#38bdf8" />
+        <text x="20" y="150" font-weight="600">Fireless Cooking &amp; Creative Arts</text>
+        <text x="20" y="167" font-size="11" fill="#94a3b8">Nutritious culinary craftsmanship</text>
+
+        <circle cx="5" cy="196" r="3.5" fill="#38bdf8" />
+        <text x="20" y="200" font-weight="600">Grand Cultural &amp; Musical Night</text>
+        <text x="20" y="217" font-size="11" fill="#94a3b8">Star guest performances &amp; dance show</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Prize Pool & Perks Banner -->
+  <g transform="translate(60, 890)">
+    <rect x="0" y="0" width="680" height="95" rx="12" fill="url(#neonCyan)" opacity="0.15" />
+    <rect x="0" y="0" width="680" height="95" rx="12" fill="none" stroke="#38bdf8" stroke-width="1.5" />
+    
+    <g transform="translate(35, 30)">
+      <text x="0" y="18" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#f59e0b">TOTAL CASH PRIZES</text>
+      <text x="0" y="48" font-family="'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="900" fill="#ffffff">₹55,000+ &amp; TROPHIES</text>
+    </g>
+
+    <line x1="280" y1="15" x2="280" y2="80" stroke="#334155" stroke-width="1.5" />
+
+    <g transform="translate(310, 25)" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" fill="#e2e8f0">
+      <text x="0" y="16" font-weight="700" fill="#ffffff">Registration Fee: ₹150 / Participant</text>
+      <text x="0" y="36" fill="#94a3b8">Includes Official Delegate Kit, Meals, Entry &amp; Certificate</text>
+      <text x="0" y="54" font-weight="600" fill="#38bdf8">Open to All Engineering, Tech, Poly &amp; Science Colleges</text>
+    </g>
+  </g>
+
+  <!-- Footer Info & Coordinates -->
+  <g transform="translate(60, 1015)" font-family="'Segoe UI', Roboto, sans-serif">
+    <line x1="0" y1="0" x2="680" y2="0" stroke="#334155" stroke-width="1" />
+    
+    <g transform="translate(0, 25)">
+      <text x="0" y="16" font-size="11" font-weight="700" fill="#ffffff">FACULTY COORDINATOR:</text>
+      <text x="0" y="34" font-size="11" fill="#cbd5e1">Dr. S. Vasanthkumar (Prof/CSE)</text>
+      <text x="0" y="50" font-size="11" fill="#94a3b8">convenor.kitech@kitcbe.com</text>
+    </g>
+
+    <g transform="translate(260, 25)">
+      <text x="0" y="16" font-size="11" font-weight="700" fill="#ffffff">STUDENT CONVENER:</text>
+      <text x="0" y="34" font-size="11" fill="#cbd5e1">Ms. Priyadharshini (Final CSE)</text>
+      <text x="0" y="50" font-size="11" fill="#94a3b8">Student Organizing Council, KIT</text>
+    </g>
+
+    <g transform="translate(500, 25)">
+      <text x="0" y="16" font-size="11" font-weight="700" fill="#f59e0b">SCAN TO REGISTER / INFO:</text>
+      <text x="0" y="34" font-size="11" fill="#ffffff">portal.kitcbe.com/kitech2027</text>
+      <text x="0" y="50" font-size="11" fill="#38bdf8">Instagram: @kitcoimbatore_kitech</text>
+    </g>
+  </g>
+
+  <!-- Bottom proposed disclaimer -->
+  <rect x="0" y="1105" width="800" height="25" fill="#060e1a" />
+  <text x="400" y="1122" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">
+    Kalaignarkarunanidhi Institute of Technology, Coimbatore • Proposed Master Event Plan for Academic Assignment
+  </text>
+</svg>
